@@ -7,26 +7,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/a18034e305.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-	<div class="container-fluid p-5 bg-primary text-white text-center">
-		<h1>Container</h1>
-		<p>Resize this responsive page to see the effect!</p>
-	</div>
+<body style="height: 1000px;">
+	<nav class="navbar-expand-sm bg-danger navbar-dark fixed-top">
+		<div class="container-fluid">
+			<ul class="navbar-nav">
+				<a class="navbar-brand mx-5" href="#"><img src="image/CK.png" alt="Logo" style="height: 36px;"></a>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="#"><i class="fa-solid fa-child-dress"></i> 박주령은</a>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="#"><i class="fa-solid fa-face-sad-cry"></i> 울보</a>
+				</li>
+				<li class="nav-item dropdown ms-3"><a class="nav-link dropdown-toggle active" href="#" role="button"
+						data-bs-toggle="dropdown"><i class="fa-solid fa-children"></i> 추억</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item active" href="#"> 우리</a></li>
+						<li><a class="dropdown-item" href="#"> 주령</a></li>
+						<li><a class="dropdown-item" href="#"> 현건</a></li>
+					</ul>
+				</li>
+				<li><button class="btn-outline-dark ms-3 justify-content-center" type="button" data-bs-toggle="offcanvas"
+						data-bs-target="#demo2"><i class="fa-solid fa-list"></i></button>></button></li>
+			</ul>
 
-	<div class="container mt-5">
-		<div class="card" style="width:400px">
-			<img class="card-img-top" src="img_avatar1.png" alt="Card image">
-			<div class="card-body">
-				<h4 class="card-title">이현건</h4>
-				<p class="card-text">풀스택 개발자</p>
-				<a href="#" class="btn btn-primary">내 프로필</a>
-			</div>
 		</div>
-	</div>
-	</div>
-	</div>
+	</nav>
+
 </body>
+
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" id="demo2">
+	<div class="offcanvas-header">
+		<h1 class="offcanvas-title">박주령</h1>
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+	</div>
+	<div class="offcanvas-body">
+		<p>박주령은 울보다</p>
+		<p>박주령은 돼지다</p>
+		<button class="btn btn-secondary" type="button">A Button</button>
+	</div>
+</div>
 
 </html>
