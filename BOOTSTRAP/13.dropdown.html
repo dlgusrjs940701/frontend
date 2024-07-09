@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bootstrap 5 Example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid p-5 bg-primary text-white text-center">
+		<h1>Container</h1>
+	</div>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<div class="dropdown">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+						Dropdown button
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Link 1</a></li>
+						<li><a class="dropdown-item" href="#">Link 2</a></li>
+						<li><a class="dropdown-item" href="#">Link 3</a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="col">
+				<div class="dropdown dropstart">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+						Dropdown button with divider
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Link 1</a></li>
+						<li><a class="dropdown-item" href="#">Link 2</a></li>
+						<li>
+							<hr class="dropdown-divider">
+							</hr>
+						</li>
+						<li><a class="dropdown-item" href="#">Link 3</a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="col">
+				<div class="dropdown dropend">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+						Dropdown button with header
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<h5 class="dropdown-header" style="color: aqua;">박주령</h5>
+						</li>
+						<li><a class="dropdown-item active" href="#">Link 1</a></li>
+						<li><a class="dropdown-item disabled" href="#">Link 2</a></li>
+						<li><a class="dropdown-item" href="#">Link 3</a></li>
+						<li>
+							<hr class="dropdown-divider">
+							</hr>
+						</li>
+						<li><span class="dropdown-item-text">Just Text</span></li>
+
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
