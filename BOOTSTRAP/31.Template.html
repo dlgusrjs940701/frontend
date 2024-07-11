@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bootstrap 5 Example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/a18034e305.js" crossorigin="anonymous"></script>
+</head>
+<style>
+	* { font-family: 'Noto Sans KR', sans-serif; }
+	a { text-decoration: none;}
+</style>
+
+<body style="height: 2000px;">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<div class="container-fluid">
+			<ul class="navbar-nav">
+				<a class="navbar-brand mx-5" href="#"><img src="image/CK.png" alt="Logo" style="height: 36px;"></a>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="#"><i class="fa-solid fa-list-check"></i> 게시판</a>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="file:///C:/workspace/frontend/BOOTSTRAP/32.%EC%9D%BC%EC%A0%95%ED%91%9C.html" target="_blank"><i class="fa-regular fa-calendar-days"></i>일정표</a>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="#"><i class="fa-solid fa-person-pregnant"></i> 박주령</a>
+				</li>
+				<li class="nav-item dropdown ms-3">
+					<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"><i
+							class="fa-solid fa-image"></i> 추억</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#"> 우리</a></li>
+						<li><a class="dropdown-item" href="#"> 주령</a></li>
+						<li><a class="dropdown-item" href="#"> 현건</a></li>
+					</ul>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link disabled" href="#"><i class="fa-solid fa-user-tie"></i>관리자</a>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+				</li>
+			</ul>
+			<span class="navbar-text me-3">박주령님 환영합니다.</span>
+		</div>
+	</nav>
+	<div class="container" style="margin-top: 80px;">
+		<div class="row" style="height: 1500px;">
+			<div class="col-3" style="font-size: 13pt;">
+				<img class="rounded-circle" src="image/그림1.jpg" alt="프로필" style="width: 70%;">
+				<div class="mt-2" style="font-size: 12pt;">
+					<span>오늘의 상태 메세지를 이 자리에 입력하세요.</span>
+					<a href="#"><span class="badge bg-secondary">수정</span></a>
+				</div>
+				<div class="mt-5">
+					<i class="fa-solid fa-paper-plane"></i> dlgusrjs07@naver.com<br>
+					<i class="fa-brands fa-github"></i>
+						<a href="https://github.com/dlgusrjs940701" target="_blank">dlgusrjs940701</a><br>
+					<i class="fa-solid fa-comment-sms"></i> 010-9914-6403<br>
+					<i class="fa-brands fa-square-instagram"></i> 7_1.hg<br>
+					<i class="fa-solid fa-location-dot"></i> 수원시 팔달구
+						<a href="#" target="_blank"><span class="badge bg-secondary">날씨</span></a><br>
+						<button type="button" class="btn btn-sm btn-outline-primary mt-3">Edit Profile</button>
+				</div>
+			</div>
+
+			<!-- 메인 영역 : 페이지마다 이 부분만 채우면 댐-->
+			<div class="col-9">
+				<h3><strong>서브 메뉴</strong></h3>
+				<hr>
+				<p>메인 영역</p>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar-expand-sm bg-light fixed-bottom">
+		<div class="container-fluid justify-content-center">
+			<span class="navbar-text me-3">Copyright &copy; 2021-2024 CK World Corp. All rights reserved</span>
+		</div>
+	</nav>
+</body>
+
+</html>
