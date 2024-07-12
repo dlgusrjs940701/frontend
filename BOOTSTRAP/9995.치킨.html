@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bootstrap 5 Example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/a18034e305.js" crossorigin="anonymous"></script>
+	<style>
+		* {
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+
+		a:link {
+			text-decoration: none;
+			text-emphasis-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-dark navbar-collapse fixed-top">
+		<div class="container mt-5">
+			<a class="navbar-brand text-white" href="#">Hyun Gun-Lee</a>
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link" href="9991.인덱스.html"><i class="fa-solid fa-person"></i> 자기소개</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="9992.가봤던곳.html"><i class="fa-solid fa-plane-departure"></i> 가봤던 곳, 가보고
+						싶은 곳</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle active" href="9993.김치볶음밥.html" data-bs-toggle="dropdown"
+						><i class="fa-solid fa-utensils"></i> 좋아하는 음식</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="9993.김치볶음밥.html">김치볶음밥</a></li>
+						<li><a class="dropdown-item" href="9994.떡볶이.html">떡볶이</a></li>
+						<li><a class="dropdown-item active" href="9995.치킨.html">치킨</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="9996.취미.html"><i class="fa-regular fa-futbol"></i> 취미</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+
+	<div class="container" style="margin-top: 200px;">
+		<div class="row" style="height: 1500px;">
+			<div class="col-3" style="font-size: 13pt;">
+				<img class="rounded-circle" src="image/프로필.jfif" alt="프로필" style="width: 70%;">
+				<div class="mt-2" style="font-size: 12pt;">
+					<span>오늘의 상태 메세지를 이 자리에 입력하세요.</span>
+					<a href="#"><span class="badge bg-secondary">수정</span></a>
+				</div>
+				<div class="mt-5">
+					<i class="fa-solid fa-envelope"></i> 아무개@naver.com<br>
+					<i class="fa-brands fa-github"></i>
+					<a href="https://github.com/dlgusrjs940701" target="_blank">dlgusrjs940701</a><br>
+					<i class="fa-solid fa-comment-sms"></i> 번호<br>
+					<i class="fa-brands fa-square-instagram"></i> 아무개<br>
+					<i class="fa-solid fa-location-dot"></i> 수원시 팔달구
+					<a href="#" target="_blank"><span class="badge bg-secondary">날씨</span></a><br>
+					<button type="button" class="btn btn-sm btn-outline-primary mt-3">Edit Profile</button>
+				</div>
+			</div>
+
+			<!-- 메인 영역 : 페이지마다 이 부분만 채우면 댐-->
+			<div class="col-9 container">
+				<h2><strong>치킨</strong></h2>
+				<hr>
+				<p>치킨을 제일 자주 먹습니다 !</p>
+				<div class="card img-fluid" style="width: 500px;">
+					<img class="card-img-top" src="image/치킨.jfif" alt="Card image" style="width: 100%;">
+					<div class="card-img-overlay">
+						<p class="card-title">치킨의 효능에 대해 찾으니까 잘 안나오긴 했지만 필수아미노산이 풍부하여 불면증을 극복하는 데 도움을 준다고 하네요... <!--작성하면 댐--></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
