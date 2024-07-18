@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>생년월일 확인</title>
+    <style>
+        input,
+        button {
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function calculateAge() {
+            let birthdate = document.getElementById(`birthdate`).value;
+            let checkDate = new Date();
+            let birthdateObj = new Date(birthdate);
+            let age = checkDate.getFullYear() - birthdateObj.getFullYear();
+            if (checkDate.getMonth() < birthdateObj.getMonth() ||
+                (checkDate.getMonth() == birthdateObj.getMonth() && checkDate.getDate() < birthdateObj.getDate())) {
+                age--;
+            }
+            let resultElement = document.getElementById(`result`);
+            resultElement.innerHTML = `<strong> 나이는 ${age}세 입니다. </strong>`;
+        }
+    </script>
 </head>
-<body>
-    
+
+<body style="margin: 40px;">
+    <h3>생년월일 확인</h3>
+    <hr>
+    <form id="birthdayForm">
+        <label for="birthdate">생년월일 :</label>
+        <input type="date" id="birthdate" name="birthdate">
+        <hr>
+        <button type="button" onclick="calculateAge()">나이 계산하기</button>
+    </form>
+
+    <div id="result"></div>
+
+
 </body>
+
 </html>
