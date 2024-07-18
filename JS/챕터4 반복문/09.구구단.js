@@ -28,3 +28,8 @@ for (let i = N - 1; i >= 0; i--) {
         line += `*`;
     console.log(line);
 }
+
+// 알아두기 
+for (let i = 0, k = 0; i * k < 100; i++, k++){
+                                                       // 가능
+}
