@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <script>
+        window.onload = () => {
+            localStorage.setItem('fruit', '복숭아');
+            let fruit = localStorage.getItem('fruit');
+            document.querySelector('h1').innerHTML = fruit;
+
+            localStorage.setItem('object', JSON.stringify({name:'복숭아', price:2000}));
+            let obj = JSON.parse(localStorage.getItem('object'));
+            const {name, price} = obj;
+            document.querySelector('#obj').innerHTML = `${name}:${price}`;
+
+            let fruits = [
+                {name:'복숭아', price:3000}, {name:'수박', price:20000}
+            ];
+            localStorage.setItem('array', JSON.stringify(fruits));
+            let array = JSON.parse(localStorage.getItem('array'));
+            console.log(array);
+
+            let todoList = [
+                {key:0, name:'점심 먹기', flag:false},
+                {key:1, name:'수업 듣기', flag:false},
+                {key:2, name:'저녁 먹기', flag:false},
+            ];
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+            let inputList = JSON.parse(localStorage.getItem('todoList'));
+            console.log(inputList);
+
+            const result = document.getElementById('result');
+            for (let item of inputList) {
+                const item = document.createElement('div');
+                const checkbox = document.createElement('input');
+                const text = document.createElement('span')
+                const button = document.createElement('button');
+                const key = keyCount++;
+                // item 객체 조작후 todo-list에 매단다
+                item.setAttribute('data-key', key);          // <div data-key="0">
+                item.appendChild(checkbox);
+                item.appendChild(text);
+                item.appendChild(button);
+                todoList.appendChild(item);
+
+                checkbox.type = 'checkbox';      // <input type="checkbox">
+                checkbox.addEventListener('change', e => {
+                    item.style.textDecoration = e.target.checked ? 'line-through' : '';
+                });
+                checkbox.value = todo.flag;
+                if (todo.flag)
+                    item.style.textDecoration = 'line-through';
+
+                text.innerHTML = todo.name;
+                // button 조작
+                button.innerText = '제거하기';
+                button.addEventListener('click', () => {
+                    removeTodo(todo.key);
+                });
+            }
+        }
+        
+    </script>
+</head>
+
+<body style="margin: 40px;">
+    <h1></h1>
+    <h1 id="obj"></h1>
+    <hr>
+    <div id="result"></div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계(그래픽 버전)</title>
+    <style>
+        body {
+            margin: 40px;
+        }
+        img { width: 100px;}
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);
+        }
+        function getWeekdayName(dayIndex) {
+            const week = '일월화수목금토';
+            return week.charAt(dayIndex);
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+
+        function updateClock() {
+            let now = new Date();
+            // let dateStr = myDate(now);
+            // document.getElementById('date').innerHTML = dateStr;
+            updateDateImage(now);
+
+            let timeStr = myTime(now);
+            updateImage('h1',timeStr[0]);
+            updateImage('h2',timeStr[1]);
+            updateImage('m1',timeStr[3]);
+            updateImage('m2',timeStr[4]);
+            updateImage('s1',timeStr[6]);
+            updateImage('s2',timeStr[7]);
+        }
+
+        function updateImage(id, digit) {
+            document.getElementById(id).src = `img/${digit}.jpg`;
+        }
+
+        function updateDateImage(now) {
+            let year = now.getFullYear().toString();
+            let month = twoDigit(now.getMonth() + 1);
+            let day = twoDigit(now.getDate());
+            let weekDay = getWeekdayName(now.getDay());
+
+            let dateStr = `${year}-${month}-${day}`;
+
+            updateImage('year1', year[0]);
+            updateImage('year2', year[1]);
+            updateImage('year3', year[2]);
+            updateImage('year4', year[3]);
+
+            updateImage('month1', month[0]);
+            updateImage('month2', month[1]);
+
+            updateImage('day1', day[0]);
+            updateImage('day2', day[1]);
+
+            document.getElementById('weekday').textContent = `(${weekDay})`;
+        }
+        window.onload = () => {
+            setInterval(updateClock, 1000);
+        };
+        
+
+
+    </script>
+</head>
+<body>
+    <img id="year1">
+    <img id="year2">
+    <img id="year3">
+    <img id="year4">
+    <img src="img/-.png">
+    
+    <img id="month1">
+    <img id="month2">
+    <img src="img/-.png">
+    
+    <img id="day1">
+    <img id="day2">
+    <span id="weekday"></span>
+    
+    <hr>
+    <img id="h1">
+    <img id="h2">
+    <img src="img/콜론.png">
+    <img id="m1">
+    <img id="m2">
+    <img src="img/콜론.png">
+    <img id="s1">
+    <img id="s2">
+</body>
+</html>

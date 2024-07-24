@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key code</title>
+    <script>
+        window.onload = () => {
+            const h1 = document.querySelector('h1');
+            const print = event => {
+                let output = '';
+                output += `alt: ${event.altkey}<br>`;
+                output += `ctrl: ${event.ctrlkey}<br>`;
+                output += `shift: ${event.shiftkey}<br>`;
+                output += `code: ${typeof(event.code) !== 'undefined' ? event.code : eventKeycode}<br>`;
+                h1.innerHTML = output;
+            }
+
+            document.addEventListener('keydown', print);
+            document.addEventListener('keyup', print);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1></h1>
+    
+</body>
+</html>
