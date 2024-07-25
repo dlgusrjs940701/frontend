@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 디지털시계</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);      // 4 --> '04', 15 --> '15'
+        }
+        function myDate(now) {
+            const week = '일월화수목금토'.split('');
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay() % 7]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        $(document).ready(() => {
+            setInterval(() => {
+                let now = new Date();
+                let dateStr = myDate(now);
+                $('#date').html(dateStr);
+
+                let timeStr = myTime(now);
+                
+                $('#h1').attr('src', `../JS/챕터7문서객체/img/${timeStr[0]}.jpg`)
+                $('#h2').attr('src', `../JS/챕터7문서객체/img/${timeStr[1]}.jpg`)
+                $('#m1').attr('src', `../JS/챕터7문서객체/img/${timeStr[3]}.jpg`)
+                $('#m2').attr('src', `../JS/챕터7문서객체/img/${timeStr[4]}.jpg`)
+                $('#s1').attr('src', `../JS/챕터7문서객체/img/${timeStr[6]}.jpg`)
+                $('#s2').attr('src', `../JS/챕터7문서객체/img/${timeStr[7]}.jpg`)
+
+            }, 1000);
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="date"></h1>
+    <hr><br>
+    <!-- <h1 id="time"></h1> -->
+    <img id="h1">
+    <img id="h2">
+    <img src="img/Colon.jpg">
+    <img id="m1">
+    <img id="m2">
+    <img src="img/Colon.jpg">
+    <img id="s1">
+    <img id="s2">
+</body>
+</html>

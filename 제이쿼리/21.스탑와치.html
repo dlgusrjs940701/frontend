@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        button { padding: 5px; margin: 5px; font-size: 1.5rem; }
+    </style>
+    <!-- jQuery CDN 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 함수: 숫자를 두 자리 문자열로 변환 ('4' -> '04', '15' -> '15')
+            function twoDigit(num) {
+                return num < 10 ? '0' + num : String(num);
+            }
+            
+            // 함수: 시간을 포맷팅하여 문자열로 반환 ('123' -> '00:12.3')
+            function displayTime(num) {
+                let minute = parseInt(num / 600);
+                let second = parseInt(num / 10) % 60;
+                return twoDigit(minute) + ':' + twoDigit(second) + '.' + num % 10;
+            }
+
+            let count = 0;  // 초 카운터 초기화
+            let si = null;  // setInterval을 저장할 변수
+
+            const display = $('#display');  // 시간을 표시할 요소 선택
+            const start = $('#start');      // 시작 버튼 선택
+            const stop = $('#stop');        // 정지 버튼 선택
+            const reset = $('#reset');      // 리셋 버튼 선택
+
+            // 시작 버튼 클릭 시 실행될 함수
+            start.on('click', function() {
+                clearInterval(si);     // 기존의 setinterval을 클리어
+                // 0.1초마다 count를 증가시키며 display 업데이트
+                si = setInterval(function() {
+                    count++;
+                    display.text(displayTime(count));
+                }, 100);
+            });
+
+            // 정지 버튼 클릭 시 실행될 함수
+            stop.on('click', function() {
+                // setInterval 정지
+                clearInterval(si);
+            });
+
+            // 리셋 버튼 클릭 시 실행될 함수
+            reset.on('click', function() {
+                clearInterval(si);           // 리셋 시에도 clearInterval을 호출하여 모든 타이머를 제거
+                // count 초기화 및 display 초기화
+                count = 0;
+                display.text('00:00.0');
+            });
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="display" style="font-size: 4rem;">00:00.0</h1>
+    <button id="start">시작</button>
+    <button id="stop">정지</button>
+    <button id="reset">리셋</button>
+</body>
+</html>
