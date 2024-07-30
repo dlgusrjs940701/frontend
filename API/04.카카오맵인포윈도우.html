@@ -11,13 +11,12 @@
             const kakaoScript = document.createElement('script');
             kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
             kakaoScript.onload = () => {
-                kakao.maps.load(() => {
-                    initializeMap();
-                });
+                kakao.maps.load(() => { });
             };
             document.head.appendChild(kakaoScript);
         }
-        function initializeMap() {
+        function drawMap(place, lat, lon) {
+            console.log(place, lat, lon);
             let container = document.getElementById('map');
             let position = new kakao.maps.LatLng(33.450701, 126.570667);
             let options = {
@@ -30,6 +29,23 @@
             let marker = new kakao.maps.Marker({
                 map: map,
                 position: position           // position으로 해도 됨
+            });
+
+            // 인포 윈도우 생성
+            var infowindow = new kakao.maps.InfoWindow({
+                // map: map, // 인포윈도우가 표시될 지도
+                // position: iwPosition,
+                // content: iwContent,
+                // removable: iwRemoveable
+                content: '<div style="padding:5px;">Hello world!</div>'
+            });
+
+            // 마우스 오버 이벤트, 마우스 아웃 이벤트 등록
+            kakao.maps.event.addListener(marker, 'mouseover', () => {
+                infowindow.open(map, marker);
+            });
+            kakao.maps.event.addListener(marker, 'mouseout', () => {
+                infowindow.close();
             });
         }
     </script>
